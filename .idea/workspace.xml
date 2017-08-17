@@ -40,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="df_visualize.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="df_visualize.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/df_visualize.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="392">
+              <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -60,7 +60,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fill_in_standard.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fill_in_standard.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fill_in_standard.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -137,9 +137,9 @@
         <option value="$PROJECT_DIR$/regression_solution.py" />
         <option value="$PROJECT_DIR$/Readme.md" />
         <option value="$PROJECT_DIR$/gompertz_adjustment.py" />
-        <option value="$PROJECT_DIR$/df_visualize.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/fill_in_standard.py" />
+        <option value="$PROJECT_DIR$/df_visualize.py" />
       </list>
     </option>
   </component>
@@ -860,14 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/df_visualize.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/get_initial_state_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -888,6 +880,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/df_visualize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
           <folding />
         </state>
       </provider>
