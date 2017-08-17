@@ -1,6 +1,7 @@
 from df_fetch import df_fetch
 from df_split import df_split
 from df_visualize import df_visualize
+from fill_in_standard import fill_in_standard
 from find_peaking_points import find_peaking_points
 from read_in_parameters import read_in_parameters
 from read_sensor import read_sensor
@@ -31,9 +32,8 @@ def main():
     print 'batch_date', batch_date
     print 'user_define_batch_date', user_define_batch_date
 
-
-
-
+    fill_in_standard(df_last_split, df_standard)
+    print 'Inserted standard guide value into the dataframe'
 
     df_visualize(df_last_split)
     print 'Made visualization of the dataframe with first six days of predicted data'
