@@ -7,9 +7,9 @@ def insert_nums(input_list):
     """
     If there is nan values in peak_final_list, fill in these nan values
     Args:
-        :param: a list, that may contains nan values
+        :param input_list: (list) A list that may contain nan values
     Returns:
-        :return: A list that has replaced nan values with logically valid numbers
+        :return peak_list_inserted: (list) A list that has replaced nan values with logically valid numbers
     """
 
     peak_list_inserted = []

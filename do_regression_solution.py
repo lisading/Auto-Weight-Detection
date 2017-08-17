@@ -1,7 +1,14 @@
 import numpy as np
 import pandas as pd
 
-def regression_solution(df):
+from df_visualize import df_visualize
+from find_nearest_bigger import find_nearest_bigger
+from get_avg_diff import get_avg_diff
+from get_first_six_index import get_first_six_index
+from gompertz_prediction import gompertz_prediction
+
+
+def do_regression_solution(df, day_list, day_list_refilled, peak_final_list, peak_final_list_refilled):
     """
     Regression solution to find value that best fits the average weight from all peaking points.
     It is used when first six days of data passed quality check. This is an iterative approach
@@ -11,27 +18,31 @@ def regression_solution(df):
     values, as well as a predicted average weight for the last day's data.
 
     Args:
-        :param(dataframe):
+        :param df: (dataframe) dataframe with first six days of predicted values
+        :param day_list: (list)
+        :param day_list_refilled: (list)
+        :param peak_final_list: (list)
+        :param peak_final_list_refilled: (list)
     Returns:
-        :return:
-    """
+        :return df (dataframe) dataframe with all predicted values
+        :return peak_final_now (float) predicted average weight for the final day
 
-    print 'initial data is sorted and passed the quality test'
-    print 'now running regression solution......'
-    print ''
+    """
 
     # assign peak_final_now with a value
     peak_final_now = np.nan
 
-    print 'for loop begins'
+    # Get the first and last valid index in the dataframe where peak value is not null.
+    first_valid_index = df['peak1'].first_valid_index()
+    last_valid_index = df['peak1'].last_valid_index()
+
+    # Get index of the sixth row with valid values
+    count_six_index = get_first_six_index(df)
+
     # We will run a for loop to iterate over all rows without predicted values in the dataframe
     for index in range(count_six_index + 1, last_valid_index + 1):
-        print '---'
-        print 'index', index
 
         cur_day = df.loc[index]['day']
-        print 'cur_day', cur_day
-        print ''
 
         # day_list/peak_final list will record values of day and peak_final values till
         # previous day. For each day we got a new day/peak_final value, we add it to the lists.
@@ -42,13 +53,12 @@ def regression_solution(df):
         # peak_final_list_refilled record all days and weight including nan values.
         print 'day_list_refilled', day_list_refilled
         print 'peak_final_list_refilled', peak_final_list_refilled
-        print ''
 
         # compute average difference of all previous data
         avg_diff = get_avg_diff(peak_final_list_refilled)
         print 'avg_diff', avg_diff
 
-        # For each index, we will fill in the predicted value, until we get ‘peak_final_now’,
+        # For each index, we will fill in the predicted value, until we get 'peak_final_now',
         # which is the estimated value of the current day
 
         # if there is no data (of any peaking vaue) in current row
@@ -128,7 +138,7 @@ def regression_solution(df):
                     print 'cur_peak_value passes the check and could be used.'
                     # pass
                 else:
-                    # else cur_peak_value can not be used， reassign cur_peak_value to np.nan
+                    # else cur_peak_value can not be used, reassign cur_peak_value to np.nan
                     print 'cur_peak_value pa'
                     cur_peak_value = np.nan
 
@@ -166,6 +176,5 @@ def regression_solution(df):
 
 
 # For testing purpose:
-df_regression_test = df.copy()
-df_regression_result, peak_final_now = regression_solution(df_regression_test)
-print 'peak_final_now', peak_final_now
+# df_regression_result, peak_final_now = do_regression_solution(df) # df is not defined here
+# print 'peak_final_now', peak_final_now

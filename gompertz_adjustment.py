@@ -23,7 +23,7 @@ def gompertz_adjustment(day_list, value_list):
         :param (list): value_list that contains list of value accompany with day_list
 
     Returns:
-        :return: adjusted value_list based on gompertz growth function
+        :return prediction_list (list): adjusted value_list based on gompertz growth function
     """
 
     X = pd.DataFrame({'day': day_list})['day'].to_frame()  # day
@@ -49,4 +49,5 @@ def gompertz_adjustment(day_list, value_list):
 # for testing purpose
 # day_list = [1, 2, 3, 4, 5, 6]
 # value_list = [73.881499999999988, 90.852159999999998, 107.71812, 128.04203999999999, 143.57220000000001, 163.17950000000002]
-# print gompertz_adjustment(day_list, value_list)
+# value_list_adjusted = gompertz_adjustment(day_list, value_list)
+# print value_list_adjusted

@@ -28,9 +28,9 @@ def gompertz_prediction(day_list, value_list, predicted_day):
         >> y_poly = svr_poly.fit(X, y).predict(X_all)
 
     Args:
-        :param (list): list of x-axis (days)
-        :param (list): list of y-axis (value, weight from peaking points)
-        :param (int): day of which we want to predict its value
+        :param day_list (list): list of x-axis (days)
+        :param value_list (list): list of y-axis (value, weight from peaking points)
+        :param predicted_day (int): day of which we want to predict its value
 
     Returns:
         :return (float): best fit value that predicts the weight in predicted_day
@@ -44,8 +44,6 @@ def gompertz_prediction(day_list, value_list, predicted_day):
     fitfunc = lambda p, x: gompertz(x, p[0], p[1], p[2])
     errfunc = lambda p, x, y: fitfunc(p, x) - y
     mse = lambda errfunc: np.mean(errfunc ** 2)
-
-    max_day = df['peak1'].last_valid_index()
 
     p0 = [1000, 3, 0.1]
     p1, success = optimize.leastsq(errfunc, p0[:], args=(X['day'], y['peak']))

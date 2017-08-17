@@ -3,6 +3,7 @@ import pandas as pd
 from itertools import islice
 
 from find_first_bigger import find_first_bigger
+from get_first_six_index import get_first_six_index
 from insert_nums import insert_nums
 
 
@@ -17,10 +18,12 @@ def get_initial_state_data(df):
         3> Insert predicted value: Day: [1, 2, 3, 4, 5, 6, 7, 8], Value: [11, 22, 33, 44, 55, 66, 77, 88]
 
     Args:
-        :param df: (dataframe) dataframe with all possible peaking values obtained from last step
+        :param df (dataframe): dataframe with all possible peaking values obtained from last step
     Returns:
-        :return :
-        :return :
+        :return day_list (list):
+        :return day_list_refilled (list):
+        :return peak_final_list (list):
+        :return peak_final_list_refilled (list):
 
     """
 
@@ -33,27 +36,9 @@ def get_initial_state_data(df):
     # Get the first and last valid index in the dataframe where peak value is not null.
     first_valid_index = df['peak1'].first_valid_index()
     last_valid_index = df['peak1'].last_valid_index()
-    # index_interval = last_valid_index - first_valid_index + 1
 
-    print 'first_valid_index', first_valid_index
-    print 'last_valid_index', last_valid_index
-    # print 'index_interval', index_interval
-
-    # find the sixth index from the beginning where the row has peak value(s)
-    # This is to extract first six rows in the dataframe in the following operation.
-    # return real index if there is less than six effective peak values
-    count = 0
-    count_six_index = last_valid_index
-    for index, row in islice(df.iterrows(), first_valid_index, last_valid_index):
-        if pd.isnull(df.loc[index]['peak1']):
-            continue
-        else:
-            count += 1
-
-        if count == 6:
-            count_six_index = index
-
-    print 'count_six_index', count_six_index
+    # Get index of the sixth row with valid values
+    count_six_index = get_first_six_index(df)
 
     # calculate the first six peak_final values (if available)
     for index, row in islice(df.iterrows(), first_valid_index, count_six_index + 1):

@@ -8,7 +8,7 @@ def read_basculas(file_name='basculas'):
     """
     Read all information from basculas.csv file
     Args:
-        :param file_name: The input file containing all sensor information
+        :param file_name: (str) The input file containing all sensor information
 
     TODO:
         At this function, the program pulls in all sensor data, then process it sensor by sensor.

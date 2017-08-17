@@ -7,10 +7,10 @@ def find_first_bigger(input_list, target):
     This function is mainly used for finding initial prediction values using naive method.
 
     Args:
-        :param (list): An ordered list of number
-        :param (float): The target
+        :param input_list: (list) An ordered list of number
+        :param target: (float) The target
     Returns:
-        :return (Float): the first number in the list that is bigger than the target
+        :return result: (Float) the first number in the list that is bigger than the target
     """
 
     # Set initial value to nan

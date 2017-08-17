@@ -7,8 +7,8 @@ def peak_det(v, delta):
     Referenced from http://billauer.co.il/peakdet.html
 
     Args:
-        :param (list): a list of all values
-        :param (float): a parameter for determining peaking points
+        :param v: (list) a list of all values
+        :param delta: (float) a parameter for determining peaking points
     Returns:
         :return (list): a list of local maxima (peaks)
         :return (list): a list of local minima

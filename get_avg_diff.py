@@ -5,9 +5,9 @@ def get_avg_diff(input_list):
     """
     Get the difference of every two adjacent value in the list, and compute the average values in the list.
     Args:
-        :param (list): A list of numbers. The list had better contain NO nan values.
+        :param input_list: (list) A list of numbers. The list had better contain NO nan values.
     Returns:
-        :return (float): Average difference of adjacent numbers in the input list.
+        :return avg_diff: (float) Average difference of adjacent numbers in the input list.
     """
 
     diff_list = []

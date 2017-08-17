@@ -15,8 +15,8 @@ def pull_data(name, var_id):
     """
     Pull data from web api and store file locally into 'original' folder.
     Args:
-        :param (str): sensor name
-        :param (str): id
+        :param name: (str) sensor name
+        :param var_id: (str) id
     """
 
     result = pd.DataFrame(columns=['variable', 'timestamp', 'fecha real', 'value'])

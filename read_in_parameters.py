@@ -1,8 +1,9 @@
 def read_in_parameters():
 
     """
-    The system takes three inputs: sensor_name, batch_date, and standard guide
-    This function is USED ONLY FOR TESTING PURPOSE.
+    THIS IS A TESTING FUNCTION. This function is USED ONLY FOR TESTING PURPOSE.
+    The system returns three inputs parameters: sensor_name, batch_date, and standard guide
+    Use pull_data() function to batch process all sensor information.
     """
 
     sensor_name = 'Sensor1'

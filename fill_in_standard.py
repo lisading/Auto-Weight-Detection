@@ -5,7 +5,7 @@ def fill_in_standard(df, df_standard):
         :param df: (dataframe) input dataframe we want to fill in standard data based on day
         :param df_standard: (dataframe): dataframe containing standard data
     Returns:
-        :return (dataframe): A dataframe that fills with standard data
+        :return df (dataframe): A dataframe that fills with standard data
     """
 
     for index, row in df.iterrows():
@@ -14,6 +14,7 @@ def fill_in_standard(df, df_standard):
             df.loc[index]['standard_data'] = industry_target
             # print 'fill in standard_data at index', index
 
+    return df
 
 # For testing purpose
 # fill_in_standard(df, df_standard) # df and df_standard are unavailable under current function

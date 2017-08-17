@@ -5,7 +5,7 @@ def read_breed_std(animal_type):
     """
     read in standard guide data.
     Args:
-        :param (str): type of breed type
+        :param animal_type: (str) type of breed type
     Returns:
         :return (dataframe): A dataframe containing standard data
     """
