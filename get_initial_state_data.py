@@ -9,8 +9,15 @@ from insert_nums import insert_nums
 def get_initial_state_data(df):
     """
     Get estimation of first six rows of valid data
+    Note:
+        It is comfortable to deal with situations when data is continuous. However if it is not, there may
+        be 3 different ways we store data (In the below example, values of day 3 and day 4 are missing):
+        1> Keep original forms: Day: [1, 2, 5, 6, 7, 8], Value: [11, 22, 55, 66, 77, 88]
+        2> Insert Nan value: Day: [1, 2, 3, 4, 5, 6, 7, 8], Value: [11, 22, np.nan, np.nan, 55, 66, 77, 88]
+        3> Insert predicted value: Day: [1, 2, 3, 4, 5, 6, 7, 8], Value: [11, 22, 33, 44, 55, 66, 77, 88]
+
     Args:
-        :param(dataframe): dataframe with all possible peaking values gained from last step
+        :param df: (dataframe) dataframe with all possible peaking values obtained from last step
     Returns:
         :return :
         :return :
