@@ -5,7 +5,7 @@ def df_visualize(df):
     """
     Plot the dataframe with day, peaking values and the predicted value (if there's any)
     Args:
-        :param (dataframe): columns in current dataframe are listed below:
+        :param df: (dataframe) columns in current dataframe are listed below:
             - column 0: day; column 10: date
             - column 1-5: peak1, peak2, peak3, peak4, peak5
             - column 6-9: peak_final, standard_data, peak_final_predicted, peak_prediction
@@ -13,12 +13,12 @@ def df_visualize(df):
 
     # Draw scatter plot for all peak and peak_final values
     x = df['day']
-    basic_scatter_plot(df, x, 'peak1', 'b')
+    basic_scatter_plot(df, x, 'peak1', 'b')  # blue
     basic_scatter_plot(df, x, 'peak2', 'b')
     basic_scatter_plot(df, x, 'peak3', 'b')
     basic_scatter_plot(df, x, 'peak4', 'b')
     basic_scatter_plot(df, x, 'peak5', 'b')
-    basic_scatter_plot(df, x, 'peak_final', 'r')
+    basic_scatter_plot(df, x, 'peak_final', 'r')  # red
 
     # Draw lines for standard guide values
     last_valid_index = df['peak1'].last_valid_index()

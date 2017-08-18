@@ -62,7 +62,7 @@ def recalculate_batch_date(df, batch_date):
 
         # if data passed the check, return the list and break the program
         # If list_sorted is false all the time.
-        if list_sorted == True:
+        if list_sorted:
             # assign batch_date to batch_date_adjusted
             # assign peak_temp_final_list to peak_final_list
             batch_date = batch_date_adjusted
@@ -86,7 +86,7 @@ df_standard = read_breed_std(breed_type)
 df_data = read_sensor(sensor_name)
 df_prediction = find_peaking_points(df_data, batch_date)
 df_prediction_split_list, batch_date_df_index = df_split(df_prediction, batch_date)
-# Here we are testing Sensor 1, series 1:
+# Umcomment the code beloe if we want to test Sensor 1, series 1:
 df_last_split, user_define_batch_date = df_fetch(
     df_prediction_split_list, batch_date_df_index, last_index_fetched_df=1)
 # Uncomment the code below if we want to test Sensor 1, series 3:

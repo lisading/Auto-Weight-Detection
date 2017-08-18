@@ -9,9 +9,9 @@ def check_initial_data_quality(peak_list):
     batch date, so we need to recalcuate batch date before going on.
 
     Args:
-        :param peak_list (list): list of all predicted values we selected
+        :param peak_list: (list) list of all predicted values we selected
     Returns:
-        :return list_sorted (boolean): whether the list monotonely increases or not (whether it can pass the check)
+        :return list_sorted: (boolean) whether the list monotonely increases or not (whether it can pass the check)
 
     """
 

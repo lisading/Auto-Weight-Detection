@@ -24,8 +24,8 @@ def do_regression_solution(df, day_list, day_list_refilled, peak_final_list, pea
         :param peak_final_list: (list)
         :param peak_final_list_refilled: (list)
     Returns:
-        :return df (dataframe) dataframe with all predicted values
-        :return peak_final_now (float) predicted average weight for the final day
+        :return df: (dataframe) dataframe with all predicted values
+        :return peak_final_now: (float) predicted average weight for the final day
 
     """
 

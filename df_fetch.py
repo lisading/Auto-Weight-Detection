@@ -10,10 +10,10 @@ def df_fetch(df_prediction_split_list, batch_date_df_index, last_index_fetched_d
     Fetch one dataframe from the split dataframes. Usually we fetch the last dataframe (by setting
     last_index_fetched_df parameter to 1), but other dataframe can also be fetched by the parameter
     Args:
-        :param (list): A list of all split dataframes
-        :param (int): Index of the dataframe with user inputted batch date
-        :param (int): The last X index of dataframe we want to fetch. Originally set to 1, because we want
-            to fetch the last split dataframe
+        :param df_prediction_split_list: (list) A list of all split dataframes
+        :param batch_date_df_index: (int) Index of the dataframe with user inputted batch date
+        :param last_index_fetched_df: (int) The last X index of dataframe we want to fetch. Originally set to 1,
+            because we want to fetch the last split dataframe
 
     Returns:
         :return (dataframe): The last X index of dataframe we fetch.
@@ -25,7 +25,7 @@ def df_fetch(df_prediction_split_list, batch_date_df_index, last_index_fetched_d
     len_of_split_list = len(df_prediction_split_list)
 
     # If we cannot fetch this dataframe, reset last_index_fetched_df parameter.
-    if (last_index_fetched_df > len_of_split_list):
+    if last_index_fetched_df > len_of_split_list:
         print 'Cannot fetch this dataframe because it exceeds max length of the split dataframe list'
         print 'Resetting last_index_fetched_df to 1.'
         last_index_fetched_df = 1

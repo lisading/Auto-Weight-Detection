@@ -85,5 +85,6 @@ def main():
         else:
             df_final, peak_last_result = do_naive_solution()
 
+    print 'caluculating final result...'
     print 'peak_last_result', peak_last_result
     return peak_last_result
