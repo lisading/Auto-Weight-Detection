@@ -39,6 +39,7 @@ def main():
     print 'Split the dataframe'
 
     # Fetch the last split dataframe
+    # TODO: change last_index_fetched_df to 1 if we want to fetch data in last dataframe
     df_last_split, user_define_batch_date = df_fetch(
         df_prediction_split_list, batch_date_df_index, last_index_fetched_df=2)
     print 'Fetched the last dataframe'
