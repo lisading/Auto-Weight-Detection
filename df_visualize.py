@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-
+# TODO: this method do not compile with current code executing environment
 def df_visualize(df):
     """
     Plot the dataframe with day, peaking values and the predicted value (if there's any)

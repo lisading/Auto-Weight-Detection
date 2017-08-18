@@ -40,7 +40,7 @@ def main():
 
     # Fetch the last split dataframe
     df_last_split, user_define_batch_date = df_fetch(
-        df_prediction_split_list, batch_date_df_index, last_index_fetched_df=1)
+        df_prediction_split_list, batch_date_df_index, last_index_fetched_df=2)
     print 'Fetched the last dataframe'
     # print 'df_last_split', df_last_split
     # print 'batch_date', batch_date
@@ -54,9 +54,12 @@ def main():
     day_list, day_list_refilled, peak_final_list, peak_final_list_refilled = get_initial_state_data(df_last_split)
     print 'Calculated predicted data for initial state'
 
+    # TODO: Comment this code because of some unknown issues
+    '''    
     # visualize current dataframe with peaking value estimations
     df_visualize(df_last_split)
     print 'Made visualization'
+    '''
 
     # check if initial prediction data passes the check
     list_sorted = check_initial_data_quality(peak_final_list)
@@ -83,8 +86,12 @@ def main():
             df_final, peak_last_result = do_regression_solution(
                 df_last_split, day_list, day_list_refilled, peak_final_list, peak_final_list_refilled)
         else:
-            df_final, peak_last_result = do_naive_solution()
+            df_final, peak_last_result = do_naive_solution(df_last_split, df_standard)
 
     print 'caluculating final result...'
     print 'peak_last_result', peak_last_result
     return peak_last_result
+
+
+if __name__ == "__main__":
+    main()

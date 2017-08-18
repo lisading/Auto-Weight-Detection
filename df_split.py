@@ -10,19 +10,20 @@ def df_split(df, batch_date):
     Split dataframe into several small dataframes according to different batches.
 
     Note:
-        Spliting the dataframe at the very beginning might save some extra calculations,
-        but we split it here because it is easier to manipulate.)
+        Split the dataframe at the very beginning might save some extra calculations,
+        but we split it here because it is easier to manipulate.
 
     Args:
-        :param (dataframe): dataframe with peaking values we got
-        :param (str): user inputted batch date
+        :param df: (dataframe) dataframe with peaking values we got
+        :param batch_date: (str) user inputted batch date
 
     Returns:
-        :return (list): A list of divided dataframes
-        :return (int): the index of the dataframe that owns user inputted batch date.
+        :return df_prediction_split_list: (list) A list of divided dataframes
+        :return batch_date_df_index: (int) the index of the dataframe that owns user inputted batch date.
     """
 
     # Set separating points
+    global batch_date_df_index
     count = 0
     batch_date_index = 0
     checkpoint = False  # record if there is a batch date - set to False if there's not
@@ -111,10 +112,12 @@ def df_split(df, batch_date):
     return df_prediction_split_list, batch_date_df_index
 
 
+'''
 # for testing purpose:
-# sensor_name, batch_date, breed_type = read_in_parameters()
-# df_data = read_sensor(sensor_name)
-# df_prediction = find_peaking_points(df_data, batch_date)
-# df_prediction_split_list, batch_date_df_index = df_split(df_prediction, batch_date)
-# print df_prediction_split_list
-# print 'batch_date_df_index', batch_date_df_index
+sensor_name, batch_date, breed_type = read_in_parameters()
+df_data = read_sensor(sensor_name)
+df_prediction = find_peaking_points(df_data, batch_date)
+df_prediction_split_list, batch_date_df_index = df_split(df_prediction, batch_date)
+print df_prediction_split_list
+print 'batch_date_df_index', batch_date_df_index
+'''

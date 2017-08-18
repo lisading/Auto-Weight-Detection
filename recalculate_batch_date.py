@@ -81,6 +81,7 @@ def recalculate_batch_date(df, batch_date):
 # Sensor 1, series 1 is a good example when we cannot find batch date anyway
 # Sensor 1, series 3 is a good example when we can use this method to find batch date.
 
+'''
 sensor_name, batch_date, breed_type = read_in_parameters()
 df_standard = read_breed_std(breed_type)
 df_data = read_sensor(sensor_name)
@@ -102,3 +103,4 @@ if not list_sorted:
     else:
         list_sorted, batch_date, peak_final_list = recalculate_batch_date(df_last_split, batch_date)
         print list_sorted, batch_date, peak_final_list
+'''

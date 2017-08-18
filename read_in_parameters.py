@@ -16,3 +16,5 @@ def read_in_parameters():
 # For testing purpose:
 # sensor_name, batch_date, breed_type = read_in_parameters()
 # print sensor_name, batch_date, breed_type
+
+# This function passed unit test.

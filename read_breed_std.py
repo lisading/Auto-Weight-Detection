@@ -17,3 +17,5 @@ def read_breed_std(animal_type):
 # breed_type = 'hyline'
 # df_standard = read_breed_std(breed_type)
 # print df_standard
+
+# This function passed unit test.

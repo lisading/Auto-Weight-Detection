@@ -45,9 +45,10 @@ def gompertz_adjustment(day_list, value_list):
 
     return prediction_list
 
-
+'''
 # for testing purpose
-# day_list = [1, 2, 3, 4, 5, 6]
-# value_list = [73.881499999999988, 90.852159999999998, 107.71812, 128.04203999999999, 143.57220000000001, 163.17950000000002]
-# value_list_adjusted = gompertz_adjustment(day_list, value_list)
-# print value_list_adjusted
+day_list = [1, 2, 3, 4, 5, 6]
+value_list = [73.881499999999988, 90.852159999999998, 107.71812, 128.04203999999999, 143.57220000000001, 163.17950000000002]
+value_list_adjusted = gompertz_adjustment(day_list, value_list)
+print value_list_adjusted
+'''

@@ -6,6 +6,7 @@ from scipy import signal
 from numpy import array
 import matplotlib.pyplot as plt
 
+from df_visualize import df_visualize
 from peak_det import peak_det
 from read_in_parameters import read_in_parameters
 from read_sensor import read_sensor
@@ -18,10 +19,10 @@ def find_peaking_points(df_data, batch_date):
     all weighting data, and find the maximum peaking points from the histogram.
 
     Args:
-        :param (dataframe): All data read from sensor, stored in a dataframe
-        :param (str): batch date of this sensor (which is inputted by the user)
+        :param df_data: (dataframe) All data read from sensor, stored in a dataframe
+        :param batch_date: (str) batch date of this sensor (which is entered by the user)
     Returns:
-        :return (dataframe): a dataframe storing all peaking values for each day.
+        :return df (dataframe): a dataframe that stores all peaking values for each day.
     """
 
     # create a list to save all available dates
@@ -40,7 +41,7 @@ def find_peaking_points(df_data, batch_date):
     date_continual_str = ','.join(date_continual)
     date_continual = date_continual_str.split(",")
 
-    # create a dataframe for storing final prediction of one animal's weight
+    # create a dataframe for storing prediction of one animal's weight,
     # there should not be more than 6 chickens in the sensor
     df = pd.DataFrame(index=date_continual,
                       columns=['day', 'peak1', 'peak2', 'peak3', 'peak4', 'peak5', 'peak_final',
@@ -154,20 +155,14 @@ def find_peaking_points(df_data, batch_date):
         day += 1
 
     # plot df_prediction with day and peaking value
-    x = df['day']
-    y1 = df['peak1']
-    y2 = df['peak2']
-    y3 = df['peak3']
-    y4 = df['peak4']
-    y5 = df['peak5']
 
-    plt.scatter(x, y1, color='b')
-    plt.scatter(x, y2, color='b')
-    plt.scatter(x, y3, color='b')
-    plt.scatter(x, y4, color='b')
-    plt.scatter(x, y5, color='b')
-
-    plt.show()
+    # TODO: Fix visualization problem here
+    '''
+    # Commented this block of code because of some unknown error: Error: this application, or a library it uses,
+     has passed an invalid numeric value (NaN, or not-a-number) to CoreGraphics API and this value is being ignored.
+    
+    df_visualize(df)
+    '''
 
     # add date to dataframe and reset index
     df['date'] = df.index

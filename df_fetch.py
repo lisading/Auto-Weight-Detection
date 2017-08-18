@@ -67,7 +67,7 @@ def df_fetch(df_prediction_split_list, batch_date_df_index, last_index_fetched_d
 
     return df_last_split, user_define_batch_date
 
-
+'''
 # For testing purpose:
 sensor_name, batch_date, breed_type = read_in_parameters()
 df_data = read_sensor(sensor_name)
@@ -84,3 +84,4 @@ print 'Finished fetching the last dataframe'
 print 'df_last_split', df_last_split
 print 'batch_date', batch_date
 print 'user_define_batch_date', user_define_batch_date
+'''

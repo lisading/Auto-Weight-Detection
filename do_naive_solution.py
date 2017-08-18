@@ -71,5 +71,5 @@ def do_naive_solution(df, df_standard):
 
 
 # For testing purpose:
-df_naive_result, peak_final_now = do_naive_solution(df)
-print 'peak_final_now', peak_final_now
+# df_naive_result, peak_final_now = do_naive_solution(df, df_standard)
+# print 'peak_final_now', peak_final_now

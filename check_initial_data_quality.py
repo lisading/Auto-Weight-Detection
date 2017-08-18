@@ -25,8 +25,9 @@ def check_initial_data_quality(peak_list):
     else:
         return False
 
-
+'''
 # For testing purpose:
 peak_final_list = [297.87950700000005, 331.78137500000003, 53.401451000000002, 55.302037999999996, 56.770060000000001, 556.28602000000001]
 list_sorted = check_initial_data_quality(peak_final_list)
 print list_sorted
+'''

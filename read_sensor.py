@@ -4,6 +4,10 @@ import pandas as pd
 def read_sensor(sensor):
     """
     Read in sensor data and do some basic data cleaning, removing abnormal and unacceptable values
+    Args:
+        :param sensor: (str) sensor name
+    Returns:
+        :return df: (dataframe) dataframe with the sensor's data (after basic cleaning)
     """
 
     file_name = 'original/' + sensor + '.csv'
@@ -37,3 +41,5 @@ def read_sensor(sensor):
 # sensor_name = 'Sensor1'
 # df_data = read_sensor(sensor_name)
 # print df_data
+
+# This function passed unit test

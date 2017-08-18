@@ -162,8 +162,12 @@ def do_regression_solution(df, day_list, day_list_refilled, peak_final_list, pea
             peak_final_list.append(cur_peak_value)
             peak_final_list_refilled.append(cur_peak_value)
 
+            # TODO: Fix visualization issues
+            '''
+            Comment this code because of some unknown issues
             # visualize the result so far
             df_visualize(df)
+            '''
 
             # if this is the last index, assign cur_peak_value to peak_final_now
             # and return the result.
@@ -171,6 +175,10 @@ def do_regression_solution(df, day_list, day_list_refilled, peak_final_list, pea
                 peak_final_now = cur_peak_value
                 print 'peak_final_now', peak_final_now
                 return df, peak_final_now
+
+    if np.isnan(peak_final_now):
+        cleaned_list = [x for x in peak_final_list if str(x) != 'nan']
+        peak_final_now = cleaned_list[len(peak_final_now) - 1]
 
     return df, peak_final_now
 
