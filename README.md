@@ -5,7 +5,7 @@ For detailed [documentation](https://github.com/lisading/Auto-Weight-Detection/b
 
 Two known issues:    
 
-- `df_visualize()` method reports error and cannot be worked properly
+- `df_visualize()` reports error and cannot be worked properly
 - `do_regression_solution()` cannot be worked properly
 
 Author: Zhiyi Ding, zyding@cmu.edu
