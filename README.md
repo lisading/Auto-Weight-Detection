@@ -1,13 +1,11 @@
-# Auto Weighting program
+### Automated Scales for Weight Capture
 
-This program operates on PyCharm and starts from main.py.
-For more documentation of the logic, go to /doc folder.
+This program operates on PyCharm and starts from main.py in `/src` folder.    
+For detailed [documentation](https://github.com/lisading/Auto-Weight-Detection/blob/master/doc/doc.pdf) and [UML diagram](https://github.com/lisading/Auto-Weight-Detection/blob/master/doc/uml.pdf), go to [`/doc`](https://github.com/lisading/Auto-Weight-Detection/tree/master/doc) folder.    
 
+Two known issues:    
 
-Two important known issues:
-
-- df_visualize() method reports error and cannot be worked
+- df_visualize() method reports error and cannot be worked properly
 - do_regression_solution() cannot be worked properly
 
-
-Author and any contact: Zhiyi Ding, zyding@cmu.edu
+Author: Zhiyi Ding, zyding@cmu.edu
